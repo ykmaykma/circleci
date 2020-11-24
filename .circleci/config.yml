@@ -2,20 +2,18 @@ version: 2.1
 
 jobs:
   test:
-    parameters:
-      version:
-        type: string
     docker:
-      - image: python:<< parameters.version >>
+      - image: python:3.6
     steps:
       - checkout
       - run: pip install flask pytest
       - run: py.test
-
+      - run: zip /tmp/hello-latest.zip *.py
+      - store_artifacts:
+          path: /tmp/hello-latest.zip
+          destination: hello-latest.zip
+ 
 workflows:
   welcome:
     jobs:
-      - test:
-          matrix:
-            parameters:
-              version: ["3.5", "3.6", "3.7", "2.7"]
+      - test
