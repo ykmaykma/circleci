@@ -5,11 +5,7 @@ jobs:
     machine: true
     steps:  
       - run: echo 'Hello, world'
-      - run: echo 'This is message in CircleCI worker.'
-      - run: pwd
-      - run: uname -a
-      - run: ps
-      - run: ls
+      - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Hello, ykmaykma!\"}' https://hooks.slack.com/services/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"
 
 workflows:
   welcome:
