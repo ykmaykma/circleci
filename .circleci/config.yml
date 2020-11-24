@@ -1,0 +1,12 @@
+version: 2.1
+
+jobs:
+  hello:
+    machine: true
+    steps:  
+      - run: echo "Hello, world!"
+
+workflows:
+  welcome:
+    jobs:
+      - hello
