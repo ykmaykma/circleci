@@ -5,7 +5,7 @@ jobs:
     machine: true
     steps:  
       - run: echo 'Hello, world'
-      - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Hello, ykmaykma!\"}' https://hooks.slack.com/services/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"
+      - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Hello, <Nickname>!\"}' ${SLACK_API_URL}"
 
 workflows:
   welcome:
