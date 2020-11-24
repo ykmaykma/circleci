@@ -4,12 +4,7 @@ jobs:
   hello:
     machine: true
     steps:  
-      - run: echo 'Hello, world'
-      - run: echo 'This is message in CircleCI worker.'
-      - run: pwd
-      - run: uname -a
-      - run: ps
-      - run: ls
+      - run: echo "Hello, world!"
 
 workflows:
   welcome:
