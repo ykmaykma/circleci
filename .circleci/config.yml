@@ -3,9 +3,10 @@ version: 2.1
 jobs:
   hello:
     machine: true
-    steps:  
+    steps:
+      - checkout
       - run: echo 'Hello, world'
-      - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Hello, <Nickname>!\"}' ${SLACK_API_URL}"
+      - run: cat .circleci/config.yml
 
 workflows:
   welcome:
